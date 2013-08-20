@@ -10,17 +10,20 @@
 </head>
 
 <body ng-app="app" ng-controller="QuestionController">
+
 	<div ng-repeat="question in questions" ng-show="currentQuestion == $index">
 		{{ question.question }}
-			<label ng-repeat="choice in question.choices">
-				<input type="radio" value="{{ $index }}" ng-model="$parent.userAnswer">
-				{{ choice }}
-			</label>
-			<button ng-click="nextQuestion($index, userAnswer)">Next</button>
+		<label ng-repeat="choice in question.choices">
+			<input type="radio" value="{{ $index }}" ng-model="$parent.userAnswer">
+			{{ choice }}
+		</label>
+		<button ng-click="nextQuestion($index, userAnswer)">Next</button>
 	</div>
+
 	<div ng-show="lastQuestion">
 		<h1 ng-model="score">{{ score }} outta {{ questions.length }}</h1>
 	</div>
+	
 </body>
 
 </html>
