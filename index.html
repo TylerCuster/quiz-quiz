@@ -2,28 +2,41 @@
 <html>
 
 <head>
-	<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-	<script src="questions.js"></script>
-	<script src="app.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	<title>quiz quiz</title>
 </head>
 
 <body ng-app="app" ng-controller="QuestionController">
 
-	<div ng-repeat="question in questions" ng-show="currentQuestion == $index">
-		{{ question.question }}
-		<label ng-repeat="choice in question.choices">
-			<input type="radio" value="{{ $index }}" ng-model="$parent.userAnswer">
-			{{ choice }}
-		</label>
-		<button ng-click="nextQuestion($index, userAnswer)">Next</button>
-	</div>
+		<div class="row-fluid">
+			<div class="span4 panel"></div>
+			<div class="span8">
+				<div ng-repeat="question in questions" ng-show="showQuestion($index)" >
+					<div class="question"> {{ question.question }}</div>
+					<label ng-repeat="choice in question.choices">
+						<input type="radio" value="{{ $index }}" ng-model="$parent.userAnswer">
+						{{ choice }}
+					</label>
+					<button ng-show="!firstQuestion($index)" ng-click="previousQuestion()" class="btn">Back</button>
+					<button ng-click="nextQuestion($index, userAnswer)" ng-disabled="!userAnswer" class="btn btn-success">Next</button>
+				</div>
 
-	<div ng-show="lastQuestion">
-		<h1 ng-model="score">{{ score }} outta {{ questions.length }}</h1>
-	</div>
-	
+				<div ng-show="quiz.lastQuestion" ng-model="quiz.score">
+					<span class="score">{{ quiz.score }}</span>
+					<span class="outta">/ {{ questions.length }}</span>
+					<div class="play-again pull-right">
+						<a ng-click="reload()" class="btn btn-primary btn-medium" href="#">Play again</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="questions.js"></script>
+	<script src="app.js"></script>
 </body>
-
 </html>
