@@ -1,0 +1,38 @@
+body {
+  margin: 10% 30% 0 0;
+}
+
+.panel {
+  background-color: black;
+}
+
+.question {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.score {
+  padding: 0.2em;
+  font-size: 5em;
+  color: black;
+  background-color: green;
+  border-radius: 5em;
+  margin-bottom: 1em;
+}
+
+.outta {
+  font-size: 5em;
+  margin-left: 0.2em;
+}
+
+.play-again {
+  margin-top: 5em;
+}
+
+input[type="radio"] {
+  margin: 1em;
+}
+
+button {
+  margin: 1em 1em 1em 0;
+}
