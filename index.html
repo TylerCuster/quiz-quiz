@@ -10,8 +10,10 @@
 <body ng-app="app" ng-controller="QuestionController">
 
 		<div class="row-fluid">
-			<div class="span4 panel"></div>
-			<div class="span8">
+			<div class="span5 panel progress">
+				<div class="bar bar-success" style="width: {{ quiz.width + '%'}}"></div>
+			</div>
+			<div class="span7 quiz">
 				<div ng-repeat="question in questions" ng-show="showQuestion($index)" >
 					<div class="question"> {{ question.question }}</div>
 					<label ng-repeat="choice in question.choices">
@@ -31,7 +33,6 @@
 				</div>
 			</div>
 		</div>
-
 
 	<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>

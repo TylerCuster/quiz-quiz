@@ -1,8 +1,9 @@
 var app = angular.module('app', []);
 
 app.controller('QuestionController', function($scope) {
+	var increment = 1/questions.length*100;
 	$scope.questions = questions;
-	$scope.quiz = {currentQuestion: 0};
+	$scope.quiz = {currentQuestion: 0, width: 0};
 
 	$scope.showQuestion = function(index) {
 		return $scope.quiz.currentQuestion == index;
@@ -14,16 +15,22 @@ app.controller('QuestionController', function($scope) {
 
 	$scope.previousQuestion = function () {
 		$scope.quiz.currentQuestion -= 1;
+		progressBar(forward = false);
 	};
 
 	$scope.nextQuestion = function(index, userAnswer) {
 		logAnswer(index, userAnswer);
+		progressBar(forward = true);
 		$scope.quiz.currentQuestion += 1;
 		$scope.quiz.lastQuestion = ($scope.quiz.currentQuestion == questions.length);
 		if ($scope.quiz.lastQuestion) { score (); }
 	};
 
-	var logAnswer = function (index, userAnswer) {
+	var progressBar = function(forward) {
+		forward && ($scope.quiz.width += increment) || ($scope.quiz.width -= increment);
+	};
+
+	var logAnswer = function(index, userAnswer) {
 		$scope.questions[index].userAnswer = userAnswer;
 	};
 	

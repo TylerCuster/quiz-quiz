@@ -1,9 +1,12 @@
 body {
-  margin: 10% 30% 0 0;
+  margin: 10% 25% 0 0;
 }
 
 .panel {
-  background-color: black;
+}
+
+.quiz {
+  margin-left: 3em;
 }
 
 .question {
@@ -15,7 +18,7 @@ body {
   padding: 0.2em;
   font-size: 5em;
   color: black;
-  background-color: green;
+  background-color: #74C375;
   border-radius: 5em;
   margin-bottom: 1em;
 }
