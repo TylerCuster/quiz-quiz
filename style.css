@@ -39,3 +39,23 @@ input[type="radio"] {
 button {
   margin: 1em 1em 1em 0;
 }
+
+.pleaseshow.ng-hide-add,
+.pleaseshow.ng-hide-remove {
+  -webkit-transition:0.3s linear all;
+  -moz-transition:0.3s linear all;
+  -o-transition:0.3s linear all;
+  transition:0.3s linear all;
+}
+.pleaseshow.ng-hide-remove {
+  opacity:0;
+}
+.pleaseshow.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}
+.pleaseshow.ng-hide-add {
+  opacity:1;
+}
+.pleaseshow.ng-hide-add.ng-hide-add-active {
+  opacity:0;
+}

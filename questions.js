@@ -21,6 +21,6 @@ var questions = [
 	},
 	{
 		question: "How many acorns in tree with three acorns, twelve leaves, twenty-five branches, sixty-five legumes?",
-		choices: ["One or two", "Acorn", "Peanut is a legume", "Acorn", "Demons"],
+		choices: ["One or two", "Acorn", "Peanut is a legume", "Acorns", "Demons"],
 		correctAnswer:3
 	}];

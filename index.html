@@ -9,33 +9,36 @@
 
 <body ng-app="app" ng-controller="QuestionController">
 
-		<div class="row-fluid">
-			<div class="span5 panel progress">
-				<div class="bar bar-success" style="width: {{ quiz.width + '%'}}"></div>
-			</div>
-			<div class="span7 quiz">
-				<div ng-repeat="question in questions" ng-show="showQuestion($index)" >
+	<div class="row-fluid">
+		<div class="span5 panel progress">
+			<div class="bar bar-success" style="width: {{ quiz.width + '%'}}"></div>
+		</div>
+		<div class="span7 quiz">
+			<div ng-repeat="question in questions">
+				<div class="fadeout" ng-show="showQuestion($index)">
 					<div class="question"> {{ question.question }}</div>
 					<label ng-repeat="choice in question.choices">
 						<input type="radio" value="{{ $index }}" ng-model="$parent.userAnswer">
 						{{ choice }}
 					</label>
-					<button ng-show="!firstQuestion($index)" ng-click="previousQuestion()" class="btn">Back</button>
+					<button ng-hide="firstQuestion($index)" ng-click="previousQuestion()" class="btn">Back</button>
 					<button ng-click="nextQuestion($index, userAnswer)" ng-disabled="!userAnswer" class="btn btn-success">Next</button>
 				</div>
+			</div>
 
-				<div ng-show="quiz.lastQuestion" ng-model="quiz.score">
-					<span class="score">{{ quiz.score }}</span>
-					<span class="outta">/ {{ questions.length }}</span>
-					<div class="play-again pull-right">
-						<a ng-click="reload()" class="btn btn-primary btn-medium" href="#">Play again</a>
-					</div>
+			<div ng-show="quiz.lastQuestion" ng-model="quiz.score">
+				<span class="score">{{ quiz.score }}</span>
+				<span class="outta">/ {{ questions.length }}</span>
+				<div class="play-again pull-right">
+					<a ng-click="reload()" class="btn btn-primary btn-medium" href="#">Play again</a>
 				</div>
 			</div>
 		</div>
+	</div>
 
 	<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="angular-animate.min.js"></script>
 	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="questions.js"></script>
 	<script src="app.js"></script>

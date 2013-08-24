@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ["ngAnimate"]);
 
 app.controller('QuestionController', function($scope) {
 	var increment = 1/questions.length*100;
@@ -14,8 +14,8 @@ app.controller('QuestionController', function($scope) {
 	};
 
 	$scope.previousQuestion = function () {
-		$scope.quiz.currentQuestion -= 1;
 		progressBar(forward = false);
+		$scope.quiz.currentQuestion -= 1;
 	};
 
 	$scope.nextQuestion = function(index, userAnswer) {
