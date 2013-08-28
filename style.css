@@ -1,8 +1,17 @@
 body {
-  margin: 10% 25% 0 0;
+  margin: 10% 10% 0 5%;
+}
+
+label {
+  display: block;
+  clear: both;
 }
 
 .panel {
+}
+
+.quizzes {
+  margin-top: 1em;
 }
 
 .quiz {
@@ -40,22 +49,22 @@ button {
   margin: 1em 1em 1em 0;
 }
 
-.pleaseshow.ng-hide-add,
-.pleaseshow.ng-hide-remove {
+.fadeout.ng-hide-add,
+.fadeout.ng-hide-remove {
   -webkit-transition:0.3s linear all;
   -moz-transition:0.3s linear all;
   -o-transition:0.3s linear all;
   transition:0.3s linear all;
 }
-.pleaseshow.ng-hide-remove {
+.fadeout.ng-hide-remove {
   opacity:0;
 }
-.pleaseshow.ng-hide-remove.ng-hide-remove-active {
+.fadeout.ng-hide-remove.ng-hide-remove-active {
   opacity:1;
 }
-.pleaseshow.ng-hide-add {
+.fadeout.ng-hide-add {
   opacity:1;
 }
-.pleaseshow.ng-hide-add.ng-hide-add-active {
+.fadeout.ng-hide-add.ng-hide-add-active {
   opacity:0;
 }

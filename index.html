@@ -2,45 +2,25 @@
 <html>
 
 <head>
-	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="/lib/bootstrap.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 	<title>quiz quiz</title>
 </head>
 
-<body ng-app="app" ng-controller="QuestionController">
+<body ng-app="app" ng-controller="QuizzesController">
 
-	<div class="row-fluid">
-		<div class="span5 panel progress">
-			<div class="bar bar-success" style="width: {{ quiz.width + '%'}}"></div>
-		</div>
-		<div class="span7 quiz">
-			<div ng-repeat="question in questions">
-				<div class="fadeout" ng-show="showQuestion($index)">
-					<div class="question"> {{ question.question }}</div>
-					<label ng-repeat="choice in question.choices">
-						<input type="radio" value="{{ $index }}" ng-model="$parent.userAnswer">
-						{{ choice }}
-					</label>
-					<button ng-hide="firstQuestion($index)" ng-click="previousQuestion()" class="btn">Back</button>
-					<button ng-click="nextQuestion($index, userAnswer)" ng-disabled="!userAnswer" class="btn btn-success">Next</button>
-				</div>
-			</div>
-
-			<div ng-show="quiz.lastQuestion" ng-model="quiz.score">
-				<span class="score">{{ quiz.score }}</span>
-				<span class="outta">/ {{ questions.length }}</span>
-				<div class="play-again pull-right">
-					<a ng-click="reload()" class="btn btn-primary btn-medium" href="#">Play again</a>
-				</div>
-			</div>
-		</div>
+	<div class="row">
+		<span ng-repeat="quiz in quizzes" class="quizzes"><a href="#/{{ quiz.quizId }}">{{ quiz.quizId }} </a></span>
 	</div>
 
-	<script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="angular.min.js"></script>
-	<script src="angular-animate.min.js"></script>
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="questions.js"></script>
+	<ng-view></ng-view>
+
+	<script src="/lib/jquery-1.10.2.js"></script>
+	<script src="/lib/angular.js"></script>
+	<script src="/lib/angular-animate.js"></script>
+	<script src="/lib/angular-route.js"></script>
+	<script src="/lib/bootstrap.js"></script>
+	<script src="quizzes.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>

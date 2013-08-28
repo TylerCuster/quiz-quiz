@@ -1,9 +1,27 @@
-var app = angular.module('app', ["ngAnimate"]);
+var app = angular.module('app', ["ngAnimate", "ngRoute"]);
 
-app.controller('QuestionController', function($scope) {
-	var increment = 1/questions.length*100;
-	$scope.questions = questions;
-	$scope.quiz = {currentQuestion: 0, width: 0};
+app.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.
+		when('/:quizId', 
+		{
+			templateUrl: 'quiz.html', 
+			controller: 'QuizController'
+		});
+}]);
+
+app.controller('QuizzesController', function($scope, $http) {
+	// $http.get('quizzes.json').success(function(data) {
+	// 	$scope.quizzes = data;
+	// });
+	$scope.quizzes = quizzes;
+});
+
+app.controller('QuizController', function($scope, $routeParams) {
+	$scope.quizId = parseInt($routeParams.quizId);
+	$scope.questions = quizzes[$scope.quizId-1].quiz;
+	$scope.quiz = {currentQuestion: 0, width: 0, userAnswers: []};
+	var quizLength = $scope.questions.length,
+		increment = 1/quizLength*100;
 
 	$scope.showQuestion = function(index) {
 		return $scope.quiz.currentQuestion == index;
@@ -22,7 +40,7 @@ app.controller('QuestionController', function($scope) {
 		logAnswer(index, userAnswer);
 		progressBar(forward = true);
 		$scope.quiz.currentQuestion += 1;
-		$scope.quiz.lastQuestion = ($scope.quiz.currentQuestion == questions.length);
+		$scope.quiz.lastQuestion = ($scope.quiz.currentQuestion == quizLength);
 		if ($scope.quiz.lastQuestion) { score (); }
 	};
 
@@ -31,19 +49,14 @@ app.controller('QuestionController', function($scope) {
 	};
 
 	var logAnswer = function(index, userAnswer) {
-		$scope.questions[index].userAnswer = userAnswer;
+		$scope.quiz.userAnswers[index] = userAnswer;
 	};
 	
 	var score = function () {
 		var score = 0;
-		for (var i = 0; i < questions.length; i++) {
-			var question = $scope.questions[i];
-			if (question.userAnswer == question.correctAnswer) { score += 1; }
+		for (var i = 0; i < quizLength; i++) {
+			if ($scope.quiz.userAnswers[i] == $scope.questions[i].correctAnswer) { score += 1; }
 		}
 		$scope.quiz.score = score;
-	};
-
-	$scope.reload = function () {
-		window.location.reload();
 	};
 });
