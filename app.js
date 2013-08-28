@@ -2,10 +2,13 @@ var app = angular.module('app', ["ngAnimate", "ngRoute"]);
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
-		when('/:quizId', 
+		when('/quiz/:quizId', 
 		{
 			templateUrl: 'quiz.html', 
 			controller: 'QuizController'
+		}).
+		otherwise({
+			redirectTo: '/'
 		});
 }]);
 

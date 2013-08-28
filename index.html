@@ -8,9 +8,8 @@
 </head>
 
 <body ng-app="app" ng-controller="QuizzesController">
-
 	<div class="row">
-		<span ng-repeat="quiz in quizzes" class="quizzes"><a href="#/{{ quiz.quizId }}">{{ quiz.quizId }} </a></span>
+		<span ng-repeat="quiz in quizzes" class="quizzes"><a href="#/quiz/{{ quiz.quizId }}">{{ quiz.quizId }} </a></span>
 	</div>
 
 	<ng-view></ng-view>
