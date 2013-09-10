@@ -1,10 +1,10 @@
 <div class="row">
-	<div class="col-md-5">
-		<div class="progress">
-			<div class="progress-bar progress-bar-success" style="width: {{ quiz.width + '%' }}"></div>
-		</div>
+	<div class="col-md-5 progress">
+		<div class="progress-bar progress-bar-success" style="width: {{ quiz.width + '%' }}"></div>
 	</div>
-	<div class="col-md-7 quiz">
+</div>
+<div class="row">
+	<div class="quiz">
 		<div ng-repeat="question in questions">
 			<div ng-show="showQuestion($index)" class="fadeout" >
 				<div class="question"> {{ question.question }}</div>

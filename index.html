@@ -7,7 +7,7 @@
 	<title>quiz quiz</title>
 </head>
 
-<body ng-app="app" ng-controller="QuizzesController">
+<body ng-app="app" ng-controller="QuizController">
 	<div class="row">
 		<span ng-repeat="quiz in quizzes" class="quizzes"><a href="#/quiz/{{ quiz.quizId }}">{{ quiz.quizId }} </a></span>
 	</div>
@@ -19,7 +19,7 @@
 	<script src="/lib/angular-animate.js"></script>
 	<script src="/lib/angular-route.js"></script>
 	<script src="/lib/bootstrap.js"></script>
-	<script src="static/quizzes.js"></script>
+	<script src="static/quizzes.json"></script>
 	<script src="app.js"></script>
 </body>
 </html>

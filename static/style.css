@@ -1,5 +1,5 @@
 body {
-  margin: 10% 10% 0 5%;
+  margin: 10% 10% 0 10%;
 }
 
 label {
@@ -15,7 +15,6 @@ label {
 }
 
 .quiz {
-  margin-left: 3em;
 }
 
 .question {
