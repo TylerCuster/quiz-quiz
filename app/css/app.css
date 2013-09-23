@@ -1,0 +1,71 @@
+/* app css stylesheet */
+
+body {
+  margin: 10% 10% 0 10%;
+}
+
+label {
+  display: block;
+  clear: both;
+}
+
+.panel {
+}
+
+.quizzes {
+  margin-top: 1em;
+}
+
+.quiz {
+}
+
+.question {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.score {
+  padding: 0.2em;
+  font-size: 5em;
+  color: black;
+  background-color: #74C375;
+  border-radius: 5em;
+  margin-bottom: 1em;
+}
+
+.outta {
+  font-size: 5em;
+  margin-left: 0.2em;
+}
+
+.play-again {
+  margin-top: 5em;
+}
+
+input[type="radio"] {
+  margin: 1em;
+}
+
+button {
+  margin: 1em 1em 1em 0;
+}
+
+.fadeout.ng-hide-add,
+.fadeout.ng-hide-remove {
+  -webkit-transition:0.3s linear all;
+  -moz-transition:0.3s linear all;
+  -o-transition:0.3s linear all;
+  transition:0.3s linear all;
+}
+.fadeout.ng-hide-remove {
+  opacity:0;
+}
+.fadeout.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}
+.fadeout.ng-hide-add {
+  opacity:1;
+}
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity:0;
+}
