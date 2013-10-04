@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
+angular.module('myApp.controllers', ["firebase"]).
   controller('QuizController', function($scope, $routeParams, $http) {
 	$http.get('static/quizzes.json').success(function(data) {
 		$scope.quizzes = data;
@@ -53,4 +53,40 @@ angular.module('myApp.controllers', []).
 			$scope.quiz.score = score;
 		};
 	};
-  });
+  })
+	.controller('CreateController', function($scope, angularFire) {
+		//var ref = new Firebase("https://quizquiz.firebaseio-demo.com/");
+        //$scope.quiz = [];
+        //angularFire(ref, $scope, "quiz");
+        // $scope.addMessage = function(e) {
+        //   $scope.messages.push({from: $scope.name, body: $scope.msg});
+        //   $scope.msg = "";
+        // }
+        $scope.create = {
+			quizTitle: "",
+			quiz: [
+				{
+					question: "Question",
+					choices: [1, 2, 3], 
+					correctAnswer:0
+				}
+			]
+		};
+        $scope.addQuestion = function() {
+        	$scope.create.quiz.push({
+					question: "",
+					choices: [1, 2, 3], 
+					correctAnswer:0
+			});
+        };
+        $scope.deleteQuestion = function(questionIndex) {
+        	$scope.create.quiz.splice(questionIndex, 1);
+        }
+      	$scope.addAnswer = function(questionIndex, answerIndex) {
+      		var choices = $scope.create.quiz[questionIndex].choices;
+        	choices.push(choices[choices.length-1]+1);
+        };
+        $scope.deleteAnswer = function(questionIndex, answerIndex) {
+        	$scope.create.quiz[questionIndex].choices.splice(answerIndex, 1);
+        }
+	});

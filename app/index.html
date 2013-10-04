@@ -4,14 +4,22 @@
 <head>
   <link href="lib/bootstrap.css" rel="stylesheet">
   <link href="css/app.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
   <title>quiz quiz</title>
 </head>
 
 <body ng-app="myApp" ng-controller="QuizController">
-  <div class="row quizLinks">
-    <span ng-repeat="quiz in quizzes" class="quizzes"><a href="#/quiz/{{ quiz.quizId }}">{{ quiz.quizId }} </a></span>
+  <div id="header">
+    <div id="title">
+      <a href="#/home"><i class="icon-arrow-left"></i>QUIZ-QUIZ</a>
+    </div>
+    <div id="control-panel">
+      <a href="#" class="controls">share</a>
+      <a href="#/create" class="controls">create</a>
+      <a href="#" class="controls">home</a>
+    </div>
   </div>
-
   <ng-view></ng-view>
 
   <!-- In production use:
@@ -20,6 +28,8 @@
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-animate.js"></script>
   <script src="lib/angular/angular-route.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>

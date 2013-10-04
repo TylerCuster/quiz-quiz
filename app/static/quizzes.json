@@ -1,6 +1,7 @@
 [
 	{ 
 		"quizId": 1,
+		"quizTitle": "World Leaders",
 		"quiz": [
 			{
 				"question": "Who is Prime Minister of the United Kingdom?",
@@ -31,6 +32,7 @@
 	},
 	{
 		"quizId": 2,
+		"quizTitle": "Dogs",
 		"quiz": [
 			{
 				"question": "Who is holding a small dog at this very moment?",
@@ -61,6 +63,7 @@
 	},
 	{ 
 		"quizId": 3,
+		"quizTitle": "Shrimps",
 		"quiz": [
 			{
 				"question": "Shump?",
@@ -91,6 +94,7 @@
 	},
 	{ 
 		"quizId": 4,
+		"quizTitle": "Cats",
 		"quiz": [
 			{
 				"question": "What's a better cat name?",

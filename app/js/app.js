@@ -10,7 +10,17 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
 			templateUrl: 'partials/quiz.html', 
 			controller: 'QuizController'
 		}).
+		when('/home',
+		{
+			templateUrl: 'partials/home.html',
+			controller: 'QuizController'
+		}).
+		when('/create',
+		{
+			templateUrl: 'partials/create.html',
+			controller: 'CreateController'
+		}).
 		otherwise({
-			redirectTo: 'index.html'
+			redirectTo: '/home'
 		});
   }]);
