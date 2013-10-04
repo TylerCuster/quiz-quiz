@@ -67,7 +67,7 @@ angular.module('myApp.controllers', ["firebase"]).
 			quiz: [
 				{
 					question: "Question",
-					choices: [1, 2, 3], 
+					choices: ["Answer 1", "Answer 2", "Answer 3"], 
 					correctAnswer:0
 				}
 			]
@@ -75,7 +75,7 @@ angular.module('myApp.controllers', ["firebase"]).
         $scope.addQuestion = function() {
         	$scope.create.quiz.push({
 					question: "",
-					choices: [1, 2, 3], 
+					choices: ["Answer 1", "Answer 2", "Answer 3"], 
 					correctAnswer:0
 			});
         };
@@ -84,7 +84,14 @@ angular.module('myApp.controllers', ["firebase"]).
         }
       	$scope.addAnswer = function(questionIndex, answerIndex) {
       		var choices = $scope.create.quiz[questionIndex].choices;
-        	choices.push(choices[choices.length-1]+1);
+      		console.log(choices);
+        	for (var i=choices.length-1; i>answerIndex; i--) {
+        		if (choices[i].indexOf("Answer ") != -1) {
+        			var num = parseInt(choices[i].replace(/\D+/, '')) + 1;
+        			choices[i] = "Answer " + num;
+        		};
+        	};
+        	choices.splice(answerIndex+1, 0, "Answer " + parseInt(answerIndex+2));
         };
         $scope.deleteAnswer = function(questionIndex, answerIndex) {
         	$scope.create.quiz[questionIndex].choices.splice(answerIndex, 1);

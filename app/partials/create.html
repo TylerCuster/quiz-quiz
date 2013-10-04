@@ -8,7 +8,7 @@
     		<i ng-click="deleteQuestion(questionIndex)" class="icon-minus-sign"></i>
     		<i ng-click="addQuestion()" class="icon-plus-sign"></i>
     		<div ng-repeat="(answerIndex, answer) in create.quiz[questionIndex].choices" class="create-answers">
-    			<input type="text" placeholder="Answer {{ answer }}">
+    			<input type="text" ng-model="answer" placeholder="{{ answer }}">
     			<i ng-click="deleteAnswer(questionIndex, answerIndex)" class="icon-minus-sign"></i>
     			<i ng-click="addAnswer(questionIndex, answerIndex)" class="icon-plus-sign"></i>
     		</div>
