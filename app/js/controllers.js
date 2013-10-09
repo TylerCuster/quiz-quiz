@@ -19,7 +19,7 @@ angular.module('myApp.controllers', ["firebase"]).
 		$scope.showQuestion = function(index) {
 			return $scope.quiz.currentQuestion == index;
 		};
-
+		
 		$scope.firstQuestion = function(index) {
 			return $scope.quiz.currentQuestion == 0;
 		};
@@ -54,46 +54,65 @@ angular.module('myApp.controllers', ["firebase"]).
 		};
 	};
   })
-	.controller('CreateController', function($scope, angularFire) {
-		//var ref = new Firebase("https://quizquiz.firebaseio-demo.com/");
-        //$scope.quiz = [];
-        //angularFire(ref, $scope, "quiz");
-        // $scope.addMessage = function(e) {
-        //   $scope.messages.push({from: $scope.name, body: $scope.msg});
-        //   $scope.msg = "";
-        // }
+	.controller('CreateController', function($scope) {
         $scope.create = {
 			quizTitle: "",
 			quiz: [
 				{
-					question: "Question",
-					choices: ["Answer 1", "Answer 2", "Answer 3"], 
-					correctAnswer:0
+					question: "",
+					choices: [
+					{
+						number: 1,
+						answer: ""
+					},
+					{
+						number: 2,
+						answer: ""
+					},
+					{
+						number: 3,
+						answer: ""
+					}
+					]
 				}
 			]
 		};
         $scope.addQuestion = function() {
         	$scope.create.quiz.push({
 					question: "",
-					choices: ["Answer 1", "Answer 2", "Answer 3"], 
-					correctAnswer:0
+					choices: [
+					{
+						number: 1,
+						answer: ""
+					},
+					{
+						number: 2,
+						answer: ""
+					},
+					{
+						number: 3,
+						answer: ""
+					}
+					]
 			});
         };
         $scope.deleteQuestion = function(questionIndex) {
-        	$scope.create.quiz.splice(questionIndex, 1);
+        	var quiz = $scope.create.quiz;
+        	if (quiz.length > 1) {
+    			quiz.splice(questionIndex, 1);
+    		}
         }
-      	$scope.addAnswer = function(questionIndex, answerIndex) {
+      	$scope.addAnswer = function(questionIndex) {
       		var choices = $scope.create.quiz[questionIndex].choices;
-      		console.log(choices);
-        	for (var i=choices.length-1; i>answerIndex; i--) {
-        		if (choices[i].indexOf("Answer ") != -1) {
-        			var num = parseInt(choices[i].replace(/\D+/, '')) + 1;
-        			choices[i] = "Answer " + num;
-        		};
-        	};
-        	choices.splice(answerIndex+1, 0, "Answer " + parseInt(answerIndex+2));
+      		choices.push({
+						number: choices.length,
+						answer: ""
+					});
         };
         $scope.deleteAnswer = function(questionIndex, answerIndex) {
-        	$scope.create.quiz[questionIndex].choices.splice(answerIndex, 1);
+        	var choices = $scope.create.quiz[questionIndex].choices;
+        	if (choices.length > 1) {
+        		choices.splice(answerIndex, 1);
+        	}
         }
 	});

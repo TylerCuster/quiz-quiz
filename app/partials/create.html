@@ -1,18 +1,28 @@
 <div ng-controller="CreateController">
-    <div class="create-box">
-    	<div class="create-title">
-    		<input type="text" ng-model="title" placeholder="Quiz Title">
+    <form role="form">
+    	<div class="create-box create-title form-group">
+            <label>Quiz Title</label>
+    		<input type="text" ng-model="create.quizTitle" placeholder="Quiz Title" class="quiz-input-box">
     	</div>
-    	<div ng-repeat="(questionIndex, question) in create.quiz" class="create-questions">
-    		<input type="text" placeholder="Question">
-    		<i ng-click="deleteQuestion(questionIndex)" class="icon-minus-sign"></i>
-    		<i ng-click="addQuestion()" class="icon-plus-sign"></i>
-    		<div ng-repeat="(answerIndex, answer) in create.quiz[questionIndex].choices" class="create-answers">
-    			<input type="text" ng-model="answer" placeholder="{{ answer }}">
+    	<div ng-repeat="(questionIndex, question) in create.quiz" class="create-box create-questions form-group">
+            <label>Question {{ questionIndex + 1 }}</label>
+            <input type="text" ng-model="question.question" placeholder="Question {{ questionIndex + 1}}" class="question-input-box">
+    		<i ng-click="deleteQuestion(questionIndex)" class="icon-minus-sign pull-right"></i>
+    		<div ng-repeat="(answerIndex, answer) in question.choices track by $index" class="create-answers">
+                <input type="radio" name="{{ questionIndex }}" value="{{ answerIndex }}" ng-model="question.correctAnswer" tabindex="-1">
+    			<input type="text" ng-model="answer.answer" placeholder="Answer {{ answerIndex + 1}}" class="answer-input-box">
     			<i ng-click="deleteAnswer(questionIndex, answerIndex)" class="icon-minus-sign"></i>
-    			<i ng-click="addAnswer(questionIndex, answerIndex)" class="icon-plus-sign"></i>
     		</div>
+            <i ng-click="addAnswer(questionIndex)" class="icon-plus-sign add-answer">Add answer</i>
     	</div>
-    </div>
 
+        <div class="create-box">
+            <div class="add-question">
+                <i ng-click="addQuestion()" class="icon-plus-sign">Add question</i>
+            </div>
+            <div class="create-button">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
 </div>

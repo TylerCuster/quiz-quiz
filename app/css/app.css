@@ -7,9 +7,6 @@ body {
   background-repeat: repeat;
 }
 
-#home {
-}
-
 label {
   display: block;
   clear: both;
@@ -19,19 +16,11 @@ a {
   color: red;
 }
 
-input[type="radio"] {
-  margin: 1em 0 1em 4em;
-}
-
-button {
-}
-
 #header {
   position: relative;
   top: 0;
   width: 100%;
   height: 56px;
-  /*background: #74C375;*/
   background: white;
   color: black;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -100,6 +89,10 @@ button {
   margin: -1em 0 0 0;
 } 
 
+.quiz input[type="radio"] {
+  margin: 1em 0 1em 4em;
+}
+
 .question {
   font-size: 2em;
   margin: 0.5em 3em 1em 1em;
@@ -129,6 +122,54 @@ button {
 .outta {
   font-size: 5em;
   margin-left: 0.2em;
+}
+
+.create-box {
+  position: relative;
+  left: 20%;
+  top: 50px;
+  padding: 2em;
+  opacity: 0.85;
+  background: white;
+  border-radius: 0.5em;
+  max-width: 700px;
+}
+
+.create-title {
+  margin: 0 0 1.5em 0;
+}
+
+.create-questions {
+  margin: 0 0 1em 0;
+}
+
+.create-answers {
+  margin: 0.75em 0 0.5em 3em;
+}
+
+.quiz-input-box {
+  width: 50%;
+}
+
+.question-input-box {
+  width: 85%;
+}
+
+.add-question {
+}
+
+.answer-input-box {
+  width: 50%;
+}
+
+.add-answer {
+  margin: 0.75em 0 5em 3em;
+}
+
+.create-button {
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
 }
 
 .fadeout.ng-hide-add,
