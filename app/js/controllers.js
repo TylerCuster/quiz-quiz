@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', ["firebase"]).
+angular.module('myApp.controllers', [""]).
   controller('QuizController', function($scope, $routeParams, $http) {
 	$http.get('static/quizzes.json').success(function(data) {
 		$scope.quizzes = data;
