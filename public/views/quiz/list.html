@@ -1,0 +1,6 @@
+<section ng-controller="ListController">
+	<h2>Quizzes</h2>
+	<div ng-repeat="quiz in quizzes">
+		<a href="#!/quiz/{{ $index }}"> {{ quiz.quizId }} {{ quiz.quizTitle }}</a>
+	</div>
+</section>
