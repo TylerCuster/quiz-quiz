@@ -1,0 +1,6 @@
+<section ng-controller="ListController" ng-init="find()">
+	<h2>Quizzes</h2>
+	<div ng-repeat="quiz in quizzes">
+		<a href="#!/quizzes/{{ quiz._id }}">{{ quiz.quizTitle }}</a>
+	</div>
+</section>

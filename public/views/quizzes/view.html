@@ -1,0 +1,28 @@
+<section ng-controller="QuizController" ng-init="findOne()">
+	<div id="container">
+		<div id="quiz-details-box">
+			<h1>{{ quiz.quizTitle }}</h1>
+			<div>created by: {{quiz.creator.name }}</div>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success" style="width: {{ play.width + '%' }}"></div>
+			</div>
+		</div>
+		<div ng-repeat="(questionIndex, question) in quiz.questions" id="quiz-box">
+			<div ng-show="showQuestion(questionIndex)" >
+				<div class="question">{{ question.question }}</div>
+				<label ng-repeat="(choiceIndex, choice) in question.choices">
+					<input type="radio" value="{{ choiceIndex }}" ng-model="$parent.userAnswer">
+					{{ choice.answer }}
+				</label>
+				<div class="buttons-container">
+					<button ng-hide="firstQuestion(questionIndex)" ng-click="previousQuestion()" class="btn btn-default">Back</button>
+					<button ng-click="nextQuestion(questionIndex, userAnswer)" ng-disabled="!userAnswer" class="btn btn-success">Next</button>
+				</div>
+			</div>
+		</div>
+		<div ng-show="play.lastQuestion" ng-model="play.score" id="score-container">
+			<span class="score"><i class="glyphicon glyphicon-arrow-right"></i> {{ play.score }}</span>
+			<span class="outta">/ {{ quiz.questions.length }}</span>
+		</div>
+	</div>
+</section>
