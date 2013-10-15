@@ -156,7 +156,7 @@ div {
 
 .create-box {
   position: relative;
-  left: 20%;
+  left: 10%;
   top: 50px;
   padding: 2em;
   opacity: 0.85;
@@ -170,7 +170,7 @@ div {
 }
 
 .create-questions {
-  margin: 0 0 1em 0;
+  margin: 1em 0 1em 0;
 }
 
 .create-answers {
