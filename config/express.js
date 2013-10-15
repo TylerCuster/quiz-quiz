@@ -45,7 +45,7 @@ module.exports = function (app, config, passport) {
 
     // express/mongo session storage
     app.use(express.session({
-      secret: 'ngFantasyFootball',
+      secret: 'QuizQuiz',
       store: new mongoStore({
         url: config.db,
         collection : 'sessions'

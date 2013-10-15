@@ -3,6 +3,7 @@ extends auth
 block auth
   form(action="/users", method="post")
     .control-group
+    #top
       label(for='name') Full name
       input#name(type='text', name="name", placeholder='Full name', value=user.name)
 
@@ -19,6 +20,7 @@ block auth
       input#password(type='password', name="password", placeholder='Password')
 
     .control-group
+    #sign-button
       button.btn.btn-primary(type='submit') Sign up
       &nbsp;
       | or&nbsp;

@@ -4,6 +4,7 @@ block auth
   form(action="/users/session", method="post")
     p.error= message
     .control-group
+    #top
       label(for='email') Email
       input#email(type='text', name="email", placeholder='Email')
 
@@ -12,6 +13,7 @@ block auth
       input#password(type='password', name="password", placeholder='Password')
 
     .control-group
+    #sign-button
       button.btn.btn-primary(type='submit') Sign in
       &nbsp;
       | or&nbsp;

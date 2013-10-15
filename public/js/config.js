@@ -5,17 +5,17 @@ window.app.config(['$routeProvider', function($routeProvider) {
 	{ 
 		templateUrl: 'views/home.html' 
 	})
-	.when('/quiz/',
+	.when('/quizzes/',
 	{
-		templateUrl: 'views/quiz/list.html'
+		templateUrl: 'views/quizzes/list.html'
 	})
-	.when('/create/',
+	.when('/quizzes/create',
 	{
-		templateUrl: 'views/create.html'
+		templateUrl: 'views/quizzes/create.html'
 	})
-	.when('/quiz/:quizId',
+	.when('/quizzes/:quizId',
 	{
-		templateUrl: 'views/quiz/view.html'
+		templateUrl: 'views/quizzes/view.html'
 	})
 	.otherwise({redirectTo: '/'});
 }]);

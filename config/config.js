@@ -14,27 +14,27 @@ var path = require('path')
 
 module.exports = {
   development: {
-    db: 'mongodb://localhost/ngff-dev',
+    db: 'mongodb://localhost/quizquiz-dev',
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'ngFantasyFootball - Development'
+      name: 'QuizQuiz - Development'
     }
   },
   test: {
-    db: 'mongodb://localhost/ngff-test',
+    db: 'mongodb://localhost/quizquiz-test',
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'ngFantasyFootball - Test'
+      name: 'QuizQuiz - Test'
     }
   },
   production: {
-    db: 'mongodb://localhost/ngff',
+    db: 'mongodb://localhost/quizquiz',
     root: rootPath,
     notifier: notifier,
     app: {
-      name: 'ngFantasyFootball - Production'
+      name: 'QuizQuiz - Production'
     }
   }
 }

@@ -1,8 +1,9 @@
-window.angular.module('quizquiz.controllers.create', []).controller('CreateController', ['$scope', '$routeParams', '$location', 'Global',
-	function($scope, $routeParams, $http, Global) {
-        $scope.create = {
+window.angular.module('quizquiz.controllers.create', []).controller('CreateController', ['$scope', '$routeParams', '$location', 'Global', 'Quizzes',
+	function($scope, $routeParams, $location, Global, Quizzes) {
+
+        var blankQuiz = {
 			quizTitle: "",
-			quiz: [
+			questions: [
 				{
 					question: "",
 					choices: [
@@ -22,8 +23,11 @@ window.angular.module('quizquiz.controllers.create', []).controller('CreateContr
 				}
 			]
 		};
+
+		$scope.quiz = blankQuiz;
+
         $scope.addQuestion = function() {
-        	$scope.create.quiz.push({
+        	$scope.quiz.questions.push({
 					question: "",
 					choices: [
 					{
@@ -42,22 +46,36 @@ window.angular.module('quizquiz.controllers.create', []).controller('CreateContr
 			});
         };
         $scope.deleteQuestion = function(questionIndex) {
-        	var quiz = $scope.create.quiz;
+        	var quiz = $scope.quiz.questions;
         	if (quiz.length > 1) {
     			quiz.splice(questionIndex, 1);
     		}
         }
       	$scope.addAnswer = function(questionIndex) {
-      		var choices = $scope.create.quiz[questionIndex].choices;
+      		var choices = $scope.quiz.questions[questionIndex].choices;
       		choices.push({
 						number: choices.length,
 						answer: ""
 					});
         };
         $scope.deleteAnswer = function(questionIndex, answerIndex) {
-        	var choices = $scope.create.quiz[questionIndex].choices;
+        	var choices = $scope.quiz.questions[questionIndex].choices;
         	if (choices.length > 1) {
         		choices.splice(answerIndex, 1);
         	}
         }
+
+        $scope.create = function () {
+			var quiz = new Quizzes();
+
+			quiz.quizTitle = $scope.quiz.quizTitle;
+			quiz.questions = $scope.quiz.questions;
+
+			quiz.$save(function(response) {
+				$location.path("quizzes/" + response._id);
+			});
+
+			this.quiz = blankQuiz;
+		};
+
 	}]);
