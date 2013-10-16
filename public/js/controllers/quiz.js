@@ -1,8 +1,6 @@
-window.angular.module('quizquiz.controllers.quiz', []).controller('QuizController', ['$scope', '$routeParams', '$location', 'Global', 'Stock', 'Quizzes',
-	function($scope, $routeParams, $http, Global, Stock, Quizzes) {
+window.angular.module('quizquiz.controllers.quiz', []).controller('QuizController', ['$scope', '$routeParams', '$location', 'Global', 'Quizzes',
+	function($scope, $routeParams, $http, Global, Quizzes) {
 		$scope.global = Global;
-		
-		//$scope.quizzes = Stock.quizzes;
 
 		$scope.findOne = function () {
 			Quizzes.get({ quizId: $routeParams.quizId }, function (quiz) {
