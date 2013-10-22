@@ -4,20 +4,21 @@
             <a href="/"><i class="glyphicon glyphicon-record"></i>QUIZ-QUIZ</a>
         </div>
         <div id="control-panel">
-	        <ul class="nav" data-ng-hide="global.isSignedIn()">
-	            <li><a href="signup">Signup</a>
-	            </li>
-	            <li class="divider-vertical"></li>
-	            <li><a href="signin">Signin</a>
-	            </li>
-	        </ul>
-	        <ul class="nav" data-ng-show="global.isSignedIn()">
+        	<div class="navi">
+        		<a href="#!/quizzes">take</a>
+        		<a href="#!/quizzes/create">create</a>
+        	</div>
+	        <div class="navi navi-sign divider" data-ng-hide="global.isSignedIn()">
+	            <a href="signup">signup</a>
+	            <a href="signin">signin</a>
+	        </div>
+	        <ul class="navi divider" data-ng-show="global.isSignedIn()">
 	            <li class="dropdown">
 	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                    {{ global.currentUser().name }} <b class="caret"></b>
 	                </a>
 	                <ul class="dropdown-menu">
-	                    <li><a href="/signout">Signout</a>
+	                    <li><a href="/signout">signout</a>
 	                    </li>
 	                </ul>
 	            </li>

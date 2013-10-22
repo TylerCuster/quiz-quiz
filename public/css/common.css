@@ -1,19 +1,13 @@
 .navbar .nav>li>a.brand {
-    margin-left:0
+    margin: 0 5em 0.5em 0;
 }
-
-.content {
-    margin-top:50px;
-    width:100%
-}
-
-/* app css stylesheet */
 
 body {
   margin: 0 auto;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   background-image: url(../img/pattern4.jpg);
   background-repeat: repeat;
+  margin-bottom: 4em;
 }
 
 label {
@@ -25,12 +19,16 @@ a {
   color: red;
 }
 
+a:hover {
+  color: green;
+}
+
 div {
   word-wrap: break-word;
 }
 
-#top {
-  margin-top: 100px;
+.glyphicon:hover {
+  color: green;
 }
 
 #sign-button {
@@ -41,10 +39,9 @@ div {
   position: relative;
   top: 0;
   width: 100%;
-  height: 80px;
-  border-bottom: solid 5px;
   background: white;
   color: black;
+  border-bottom: solid 0.5em;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
@@ -53,6 +50,7 @@ div {
 }
 
 #title {
+  position: relative;
   margin: 0 0 0 2em;
 }
 
@@ -64,21 +62,48 @@ div {
 #control-panel {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 0; 
+  margin-bottom: 0.5em;
 }
 
-.controls {
-  margin: 0.5em 0.5em 0 0;
+#control-panel a {
+  margin: 0 1em 0 0;
+}
+
+.divider {
+  display: inline-block;
+  border-left: 2px black solid;
+  float: right;
+}
+
+.divider li {
+  list-style-type: none;
+  margin-left: -2em;
+}
+
+.divider li ul li {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.navi {
+  display: inline-block;
+  float: left;
+}
+
+.navi-sign {
+  display: inline-block;
+  padding-left: 1em;
 }
 
 .home-box {
   position: relative;
-  left: 5em;
+  left: 3em;
   width: 70%;
   opacity: 0.85;
   border-radius: 0.5em;
-  margin: 5em 0 0 0;
-  padding: 1em 2em 3em 1em;
+  margin: 3em 0 0 0;
+  padding: 1em 2em 2em 1em;
   background: white;
   color: black;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
@@ -87,12 +112,26 @@ div {
 .quiz-links {
   display: inline-block;
   font-size: 1.5em;
-  margin: 1em 1em 0 0;
+  margin: 0 1em 0 0;
+}
+
+#list-box {
+  margin-top: 3em;
+  width: 30%;
+  opacity: 0.85;
+  background: white;
+  border-radius: 0.5em;
+  padding: 1em 0 1em 2em;
+}
+
+#list-box li {
+  list-style-type: none;
+  margin-left: -2em;
 }
 
 #container {
   float: left;
-  margin: 60px 0 0 0;
+  margin-top: 3em;
 }
 
 .progress {
@@ -197,9 +236,7 @@ div {
 }
 
 .create-button {
-  position: absolute;
-  bottom: 2em;
-  right: 2em;
+  float: right;
 }
 
 .fadeout.ng-hide-add,
@@ -220,4 +257,155 @@ div {
 }
 .fadeout.ng-hide-add.ng-hide-add-active {
   opacity:0;
+}
+
+@media (min-width: 980px) {
+}
+
+@media (max-width: 480px) {
+
+  #header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  }
+
+  #title {
+    position: relative;
+  }
+
+  #title a {
+    font-size: 1em;
+    text-decoration: none;
+  } 
+
+  #control-panel {
+    position: relative;
+    bottom: 0; 
+    margin: 0 0 0.5em 2em;
+  }
+
+  #control-panel a {
+    margin: 0 0.5em 0 0;
+  }
+
+  .divider {
+    border-left: 1px black solid;
+  }
+
+  .navi {
+    display: inline-block;
+  }
+
+  .navi-sign {
+    padding-left: 1em;
+  }
+
+  .home-box {
+    position: relative;
+    width: 90%;
+    left: 0;
+    opacity: 0.85;
+    border-radius: 0.5em;
+    margin: 1em 0 0 1em;
+    padding: 0.5em 1em 1em 1em;
+    background: white;
+    color: black;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  }
+
+  .progress {
+    width: 90%;
+    margin: 1em 3em 2em 0;
+  }
+
+  #container {
+    float: left;
+    margin-top: 1em;
+  }
+
+  #quiz-details-box {
+    float: left;
+    opacity: 0.85;
+    background: white;
+    border-radius: 0.5em;
+    width: 90%;
+    padding: 0 0.5em 0 1em;
+    margin: 0 0 1em 0;
+  }
+
+  #quiz-box {
+    float: left;
+    opacity: 0.85;
+    background: white;
+    border-radius: 0.5em;
+  } 
+
+  .question {
+    margin: 0.5em 0.5em 0.5em 1em;
+  }
+
+  .score {
+    padding: 0.2em;
+    font-size: 3em;
+    color: black;
+    background-color: #74C375;
+    border-radius: 5em;
+    margin-bottom: 1em;
+  }
+
+.outta {
+    font-size: 3em;
+    margin-left: 0.2em;
+  }
+
+.create-box {
+  position: relative;
+  left: 0;
+  top: 50px;
+  padding: 1em;
+  opacity: 0.85;
+  background: white;
+  border-radius: 0.5em;
+  max-width: 700px;
+}
+
+.create-title {
+  margin: 0 0 1.5em 0;
+}
+
+.create-questions {
+  margin: 1em 0 1em 0;
+}
+
+.create-answers {
+  margin: 0.75em 0 0.5em 3em;
+}
+
+.quiz-input-box {
+  width: 70%;
+}
+
+.question-input-box {
+  width: 95%;
+}
+
+.add-question {
+}
+
+.answer-input-box {
+  width: 80%;
+}
+
+.add-answer {
+  margin: 0.75em 0 5em 3em;
+}
+
+.create-button {
+
+}
+
 }
