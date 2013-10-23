@@ -2,20 +2,20 @@ extends auth
 
 block auth
   form(action="/users/session", method="post")
-  #sign-box
-    p.error= message
-    .control-group
-    #top
-      label(for='email') Email
-      input#email(type='text', name="email", placeholder='Email')
+    #sign-box
+      p.error= message
+      .control-group
+      #top
+        label(for='email') Email
+        input#email(type='text', name="email", placeholder='Email')
 
-    .control-group
-      label(for='password') Password
-      input#password(type='password', name="password", placeholder='Password')
+      .control-group
+        label(for='password') Password
+        input#password(type='password', name="password", placeholder='Password')
 
-    .control-group
-    #sign-button
-      button.btn.btn-primary(type='submit') Sign in
-      &nbsp;
-      | or&nbsp;
-      a.show-signup(href="/signup") Sign up
+      .control-group
+      #sign-button
+        button.btn.btn-primary(type='submit') Sign in
+        &nbsp;
+        | or&nbsp;
+        a.show-signup(href="/signup") Sign up
