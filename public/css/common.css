@@ -35,6 +35,15 @@ div {
   margin-top: 10px;
 }
 
+#sign-box {
+  margin-top: 3em;
+  width: 30%;
+  opacity: 0.85;
+  background: white;
+  border-radius: 0.5em;
+  padding: 1em 0 1em 2em;
+}
+
 #header {
   position: relative;
   top: 0;
@@ -236,7 +245,9 @@ div {
 }
 
 .create-button {
-  float: right;
+  position: absolute;
+  bottom: 1.5em;
+  right: 1em;
 }
 
 .fadeout.ng-hide-add,
@@ -264,9 +275,20 @@ div {
 
 @media (max-width: 480px) {
 
+  #sign-box {
+    margin-top: 3em;
+    width: 90%;
+    opacity: 0.85;
+    background: white;
+    border-radius: 0.5em;
+    padding: 1em 0 1em 2em;
+    margin-left: 1em;
+  }
+
   #header {
     position: relative;
     top: 0;
+    height: 56px;
     width: 100%;
     background: white;
     color: black;
@@ -284,8 +306,8 @@ div {
 
   #control-panel {
     position: relative;
-    bottom: 0; 
-    margin: 0 0 0.5em 2em;
+    bottom: 0;
+    margin: 0.2em 0 0.5em 2em;
   }
 
   #control-panel a {
@@ -301,7 +323,7 @@ div {
   }
 
   .navi-sign {
-    padding-left: 1em;
+    padding-left: 0.5em;
   }
 
   .home-box {
@@ -357,55 +379,65 @@ div {
     margin-bottom: 1em;
   }
 
-.outta {
-    font-size: 3em;
-    margin-left: 0.2em;
+  .outta {
+      font-size: 3em;
+      margin-left: 0.2em;
   }
 
-.create-box {
-  position: relative;
-  left: 0;
-  top: 50px;
-  padding: 1em;
-  opacity: 0.85;
-  background: white;
-  border-radius: 0.5em;
-  max-width: 700px;
-}
+  #list-box {
+      margin-top: 3em;
+      width: 90%;
+      opacity: 0.85;
+      background: white;
+      border-radius: 0.5em;
+      padding: 1em 0 1em 2em;
+  }
 
-.create-title {
-  margin: 0 0 1.5em 0;
-}
+  .create-box {
+    position: relative;
+    left: 0;
+    top: 50px;
+    padding: 1em;
+    opacity: 0.85;
+    background: white;
+    border-radius: 0.5em;
+    max-width: 700px;
+  }
 
-.create-questions {
-  margin: 1em 0 1em 0;
-}
+  .create-title {
+    margin: 0 0 1.5em 0;
+  }
 
-.create-answers {
-  margin: 0.75em 0 0.5em 3em;
-}
+  .create-questions {
+    margin: 1em 0 1em 0;
+  }
 
-.quiz-input-box {
-  width: 70%;
-}
+  .create-answers {
+    margin: 0.75em 0 0.5em 3em;
+  }
 
-.question-input-box {
-  width: 95%;
-}
+  .quiz-input-box {
+    width: 70%;
+  }
 
-.add-question {
-}
+  .question-input-box {
+    width: 95%;
+  }
 
-.answer-input-box {
-  width: 80%;
-}
+  .add-question {
+  }
 
-.add-answer {
-  margin: 0.75em 0 5em 3em;
-}
+  .answer-input-box {
+    width: 80%;
+  }
 
-.create-button {
+  .add-answer {
+    margin: 0.75em 0 5em 3em;
+  }
 
-}
-
+  .create-button {
+    position: absolute;
+    bottom: 0.5em;
+    right: 1em;
+  }
 }
