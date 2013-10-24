@@ -22,7 +22,7 @@
 		</div>
 		<div ng-show="play.lastQuestion" ng-model="play.score" id="score-box">
 				<div id="score-container">
-					<span id="score-container"><i class="glyphicon glyphicon-arrow-right"></i> {{ play.score }}</span>
+					<span id="score"><i class="glyphicon glyphicon-arrow-right"></i> {{ play.score }}</span>
 					<span id="outta">/ {{ quiz.questions.length }}</span>
 				</div>
 				<div ng-repeat="(questionIndex, question) in quiz.questions">

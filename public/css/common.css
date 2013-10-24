@@ -214,11 +214,6 @@ div {
   background-color: red;
 }
 
-.correctAnswer:before {
-  content: "O";
-  color: green;
-}
-
 .create-box {
   position: relative;
   left: 10%;
