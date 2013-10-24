@@ -31,6 +31,10 @@ window.angular.module('quizquiz.controllers.quiz', []).controller('QuizControlle
 			if ($scope.play.lastQuestion) { score (); }
 		};
 
+		$scope.isQuestionCorrect = function(questionIndex) {
+			return $scope.play.userAnswers[questionIndex] == $scope.quiz.questions[questionIndex].correctAnswer;
+		}
+
 		var progressBar = function(forward) {
 			var increment = 1/$scope.quiz.questions.length*100;
 			forward && ($scope.play.width += increment) || ($scope.play.width -= increment);

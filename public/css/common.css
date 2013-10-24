@@ -171,16 +171,16 @@ div {
   margin: 1em 0 1em 4em;
 }
 
-.question {
+#question {
   font-size: 2em;
   margin: 0.5em 3em 1em 1em;
 }
 
-.buttons-container {
+#buttons-container {
   margin: 2.5em 1em 2em 1em;
 }
 
-#score-container {
+#score-box {
   float: left;
   background: white;
   opacity: 0.8;
@@ -188,7 +188,11 @@ div {
   padding: 2em;
 }
 
-.score {
+#score-container {
+  margin: 0 0 2em 0;
+}
+
+#score {
   padding: 0.2em;
   font-size: 5em;
   color: black;
@@ -197,9 +201,22 @@ div {
   margin-bottom: 1em;
 }
 
-.outta {
+#outta {
   font-size: 5em;
   margin-left: 0.2em;
+}
+
+.correctQuestion {
+  background-color: #74C375;
+}
+
+.wrongQuestion {
+  background-color: red;
+}
+
+.correctAnswer:before {
+  content: "O";
+  color: green;
 }
 
 .create-box {
@@ -250,23 +267,23 @@ div {
   right: 1em;
 }
 
-.fadeout.ng-hide-add,
-.fadeout.ng-hide-remove {
-  -webkit-transition:0.3s linear all;
-  -moz-transition:0.3s linear all;
-  -o-transition:0.3s linear all;
-  transition:0.3s linear all;
+.fadeoutquiz.ng-hide-add,
+.fadeoutquiz.ng-hide-remove {
+  -webkit-transition: 0.3s linear all;
+  -moz-transition: 0.3s linear all;
+  -o-transition: 0.3s linear all;
+  transition: 0.3s linear all;
 }
-.fadeout.ng-hide-remove {
+.fadeoutquiz.ng-hide-remove {
   opacity:0;
 }
-.fadeout.ng-hide-remove.ng-hide-remove-active {
+.fadeoutquiz.ng-hide-remove.ng-hide-remove-active {
   opacity:1;
 }
-.fadeout.ng-hide-add {
+.fadeoutquiz.ng-hide-add {
   opacity:1;
 }
-.fadeout.ng-hide-add.ng-hide-add-active {
+.fadeoutquiz.ng-hide-add.ng-hide-add-active {
   opacity:0;
 }
 

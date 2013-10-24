@@ -8,21 +8,31 @@
 			</div>
 		</div>
 		<div ng-repeat="(questionIndex, question) in quiz.questions" id="quiz-box">
-			<div ng-show="showQuestion(questionIndex)" >
-				<div class="question">{{ question.question }}</div>
+			<div ng-show="showQuestion(questionIndex)">
+				<div id="question">{{ question.question }}</div>
 				<label ng-repeat="(choiceIndex, choice) in question.choices">
 					<input type="radio" value="{{ choiceIndex }}" ng-model="$parent.userAnswer">
 					{{ choice.answer }}
 				</label>
-				<div class="buttons-container">
+				<div id="buttons-container">
 					<button ng-hide="firstQuestion(questionIndex)" ng-click="previousQuestion()" class="btn btn-default">Back</button>
 					<button ng-click="nextQuestion(questionIndex, userAnswer)" ng-disabled="!userAnswer" class="btn btn-success">Next</button>
 				</div>
 			</div>
 		</div>
-		<div ng-show="play.lastQuestion" ng-model="play.score" id="score-container">
-			<span class="score"><i class="glyphicon glyphicon-arrow-right"></i> {{ play.score }}</span>
-			<span class="outta">/ {{ quiz.questions.length }}</span>
+		<div ng-show="play.lastQuestion" ng-model="play.score" id="score-box">
+				<div id="score-container">
+					<span id="score-container"><i class="glyphicon glyphicon-arrow-right"></i> {{ play.score }}</span>
+					<span id="outta">/ {{ quiz.questions.length }}</span>
+				</div>
+				<div ng-repeat="(questionIndex, question) in quiz.questions">
+					<div ng-class="{correctQuestion: isQuestionCorrect(questionIndex), wrongQuestion: !isQuestionCorrect(questionIndex)}">{{ question.question }}</div>
+					<label ng-repeat="(choiceIndex, choice) in question.choices">
+						<i ng-class="{'glyphicon glyphicon-ok': choiceIndex == question.correctAnswer, 'glyphicon glyphicon-remove': (choiceIndex == play.userAnswers[questionIndex] && isQuestionCorrect(questionIndex) == false)}"></i>
+						{{ choice.answer }}
+					</label>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
