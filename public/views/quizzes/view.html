@@ -22,11 +22,11 @@
 		</div>
 		<div ng-show="play.lastQuestion" ng-model="play.score" id="score-box">
 				<div id="score-container">
-					<span id="score"><i class="glyphicon glyphicon-arrow-right"></i> {{ play.score }}</span>
-					<span id="outta">/ {{ quiz.questions.length }}</span>
+					<span id="score">{{ play.score }}</span>
+					<span id="outta"> out of {{ quiz.questions.length }}</span>
 				</div>
 				<div ng-repeat="(questionIndex, question) in quiz.questions">
-					<div ng-class="{correctQuestion: isQuestionCorrect(questionIndex), wrongQuestion: !isQuestionCorrect(questionIndex)}">{{ question.question }}</div>
+					<div class="question" ng-class="{correctQuestion: isQuestionCorrect(questionIndex), wrongQuestion: !isQuestionCorrect(questionIndex)}">{{ question.question }}</div>
 					<label ng-repeat="(choiceIndex, choice) in question.choices">
 						<i ng-class="{'glyphicon glyphicon-ok': choiceIndex == question.correctAnswer, 'glyphicon glyphicon-remove': (choiceIndex == play.userAnswers[questionIndex] && isQuestionCorrect(questionIndex) == false)}"></i>
 						{{ choice.answer }}

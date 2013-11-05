@@ -1,3 +1,5 @@
+/*Main*/
+
 .navbar .nav>li>a.brand {
     margin: 0 5em 0.5em 0;
 }
@@ -27,9 +29,11 @@ div {
   word-wrap: break-word;
 }
 
-.glyphicon:hover {
+.glyphicon:not(.glyphicon-remove):not(.icon-minus-sign):hover {
   color: green;
 }
+
+/*Sign-in, Sign-out*/
 
 #sign-button {
   margin-top: 10px;
@@ -43,6 +47,8 @@ div {
   border-radius: 0.5em;
   padding: 1em 0 1em 2em;
 }
+
+/*Header*/
 
 #header {
   position: relative;
@@ -105,6 +111,8 @@ div {
   padding-left: 1em;
 }
 
+/*Home*/
+
 .home-box {
   position: relative;
   left: 3em;
@@ -124,6 +132,8 @@ div {
   margin: 0 1em 0 0;
 }
 
+/*List*/
+
 #list-box {
   margin-top: 3em;
   width: 30%;
@@ -137,6 +147,8 @@ div {
   list-style-type: none;
   margin-left: -2em;
 }
+
+/*Quiz*/
 
 #container {
   float: left;
@@ -164,7 +176,6 @@ div {
   background: white;
   border-radius: 0.5em;
   max-width: 700px;
-  margin: 0 0 0 0;
 } 
 
 #quiz-box input[type="radio"] {
@@ -180,39 +191,55 @@ div {
   margin: 2.5em 1em 2em 1em;
 }
 
+/*Score*/
+
 #score-box {
   float: left;
   background: white;
-  opacity: 0.8;
+  opacity: 0.85;
   border-radius: 0.5em;
   padding: 2em;
+  max-width: 70%;
 }
 
 #score-container {
-  margin: 0 0 2em 0;
+  margin-bottom: 3em;
 }
 
-#score {
-  padding: 0.2em;
+#score {  
   font-size: 5em;
-  color: black;
-  background-color: #74C375;
-  border-radius: 5em;
-  margin-bottom: 1em;
+  color: green;
 }
 
 #outta {
-  font-size: 5em;
-  margin-left: 0.2em;
+  font-size: 2em;
+  margin-left: 0.5em;
+}
+
+.question {
+  color: black;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  border-radius: 3px;
 }
 
 .correctQuestion {
-  background-color: #74C375;
+  background: linear-gradient(to right, #74C375, green);
 }
 
 .wrongQuestion {
-  background-color: red;
+  background: linear-gradient(to right, red, #B50000);
 }
+
+.glyphicon-ok {
+  color: green;
+}
+
+.glyphicon-remove {
+  color: red;
+}
+
+/*Create*/
 
 .create-box {
   position: relative;
@@ -262,6 +289,12 @@ div {
   right: 1em;
 }
 
+.icon-minus-sign:hover {
+  color: red;
+}
+
+/*Quiz Fade*/
+
 .fadeoutquiz.ng-hide-add,
 .fadeoutquiz.ng-hide-remove {
   -webkit-transition: 0.3s linear all;
@@ -280,9 +313,6 @@ div {
 }
 .fadeoutquiz.ng-hide-add.ng-hide-add-active {
   opacity:0;
-}
-
-@media (min-width: 980px) {
 }
 
 @media (max-width: 480px) {
@@ -382,7 +412,11 @@ div {
     margin: 0.5em 0.5em 0.5em 1em;
   }
 
-  .score {
+  #score-box {
+    max-width: 90%;
+  }
+
+  #score {
     padding: 0.2em;
     font-size: 3em;
     color: black;
@@ -391,7 +425,7 @@ div {
     margin-bottom: 1em;
   }
 
-  .outta {
+  #outta {
       font-size: 3em;
       margin-left: 0.2em;
   }
