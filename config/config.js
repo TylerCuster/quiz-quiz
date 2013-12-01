@@ -15,7 +15,7 @@ var path = require('path')
 module.exports = {
   development: {
     //db: 'mongodb://localhost/quizquiz-dev',
-    db: 'mongodb://TCuster:jibs@paulo.mongohq.com:10099/app18682558',
+    db: 'mongodb://*******@paulo.mongohq.com:10099/app18682558',
     root: rootPath,
     notifier: notifier,
     app: {
@@ -31,7 +31,7 @@ module.exports = {
     }
   },
   production: {
-    db: 'mongodb://TCuster:jibs@paulo.mongohq.com:10099/app18682558',
+    db: 'mongodb://*********@paulo.mongohq.com:10099/app18682558',
     root: rootPath,
     notifier: notifier,
     app: {
