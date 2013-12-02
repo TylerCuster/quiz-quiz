@@ -170,7 +170,7 @@ div {
   margin: 0 1.5em 3em 0;
 }
 
-#quiz-box {
+.quiz-box {
   float: right;
   opacity: 0.85;
   background: white;
@@ -178,16 +178,16 @@ div {
   max-width: 700px;
 } 
 
-#quiz-box input[type="radio"] {
+.quiz-box input[type="radio"] {
   margin: 1em 0 1em 4em;
 }
 
-#question {
+.question {
   font-size: 2em;
   margin: 0.5em 3em 1em 1em;
 }
 
-#buttons-container {
+.buttons-container {
   margin: 2.5em 1em 2em 1em;
 }
 
@@ -216,7 +216,7 @@ div {
   margin-left: 0.5em;
 }
 
-.question {
+.score-question {
   color: black;
   font-weight: bold;
   margin: 20px 0 10px 0;
@@ -401,7 +401,7 @@ div {
     margin: 0 0 1em 0;
   }
 
-  #quiz-box {
+  .quiz-box {
     float: left;
     opacity: 0.85;
     background: white;

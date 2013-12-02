@@ -36,7 +36,7 @@ describe('homepage', function () {
 			all.then(function(arr) {
 				arr[0].click();
 			})
-			var question = element(by.css('#question'));
+			var question = element(by.css('.question'));
 			expect(question.getText()).toEqual('How many horses can fit on the moon?');
 		});
 	});
