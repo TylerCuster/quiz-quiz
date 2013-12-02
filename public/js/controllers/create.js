@@ -63,7 +63,7 @@ window.angular.module('quizquiz.controllers.create', []).controller('CreateContr
         	if (choices.length > 1) {
         		choices.splice(answerIndex, 1);
         	}
-        }
+        };
 
         $scope.create = function () {
 			var quiz = new Quizzes();

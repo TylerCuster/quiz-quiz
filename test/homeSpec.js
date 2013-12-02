@@ -1,6 +1,6 @@
 // Home page tests
 
-var url = 'http://quiz-quiz.herokuapp.com/';
+var url = 'http://localhost:3000/';
 
 describe('homepage', function () {
 	beforeEach(function () {

@@ -7,13 +7,13 @@
     	<div ng-repeat="(questionIndex, question) in quiz.questions" class="create-box create-questions form-group">
             <label> 
                 Question {{ questionIndex + 1 }} 
-                <i ng-click="deleteQuestion(questionIndex)" class="glyphicon icon-minus-sign" title="Delete question"></i>
+                <i ng-hide="questionIndex===0" ng-click="deleteQuestion(questionIndex)" class="glyphicon icon-minus-sign" title="Delete question"></i>
             </label>
             <input type="text" ng-model="question.question" placeholder="Question {{ questionIndex + 1}}" class="question-input-box">
     		<div ng-repeat="(answerIndex, answer) in question.choices track by $index" class="create-answers">
                 <input type="radio" name="{{ questionIndex }}" value="{{ answerIndex }}" ng-model="question.correctAnswer" tabindex="-1">
     			<input type="text" ng-model="answer.answer" placeholder="Answer {{ answerIndex + 1}}" class="answer-input-box">
-    			<i ng-click="deleteAnswer(questionIndex, answerIndex)" class="glyphicon icon-minus-sign" title="Delete answer"></i>
+    			<i ng-hide="answerIndex===0" ng-click="deleteAnswer(questionIndex, answerIndex)" class="glyphicon icon-minus-sign" title="Delete answer"></i>
     		</div>
             <i ng-click="addAnswer(questionIndex)" class="glyphicon icon-plus-sign add-answer"> Add answer</i>
     	</div>
