@@ -5,6 +5,11 @@ window.angular.module('quizquiz.controllers.list', []).controller('ListControlle
 		$scope.find = function(query) {
 			Quizzes.query(query, function(quizzes) {
 				$scope.quizzes = quizzes;
+				for (var i=0; i<$scope.quizzes.length; i++) {
+					if ($scope.quizzes[i].quizTitle === "test") {
+						$scope.quizzes.splice(i,1);
+					}
+				}
 			});
 		};
 	}]);
