@@ -1,3 +1,5 @@
 *.zip
 *.jar
 *.exe
+chromedriver*
+test*
