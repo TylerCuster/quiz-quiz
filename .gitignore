@@ -3,3 +3,4 @@
 *.exe
 chromedriver
 selenium/
+config/config.js
